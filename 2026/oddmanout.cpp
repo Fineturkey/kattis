@@ -6,34 +6,33 @@ using namespace std;
 
 int main() {
     int x;
-
     cin >> x;
 
     for (int i = 0; i < x; i++) {
-        int y = 0;
-        int oddOne = 0;
-
+        int y;
         cin >> y;
+
         vector<int> guestlist(y);
 
         for (int j = 0; j < y; j++) {
             cin >> guestlist[j];
         }
 
-        sort (guestlist.begin(), guestlist.end());
-        oddOne = guestlist [guestlist.size() - 1];
+        sort(guestlist.begin(), guestlist.end());
 
-for (int j = 0; j < y - 1; j += 2) {
-    if (guestlist[j] != guestlist[j + 1]) {
-        oddOne = guestlist[j];
-        break;
+        int oddOne = guestlist.back();   // Assume the last one is odd
+
+        for (int j = 0; j < y - 1; j += 2) {
+            if (guestlist[j] != guestlist[j + 1]) {
+                oddOne = guestlist[j];
+                break;
+            }
+        }
+
+        cout << "Case #" << i + 1 << ": " << oddOne << '\n';
     }
+    return 0;
 }
-
-cout << "Case #" << i + 1 << ": " << oddOne << '\n';
-    }
-}
-
 /*
 You are hosting a party with guests and notice that there is an odd number of guests! When planning the party you deliberately invited only couples and gave each couple a unique number on their invitation. You would like to single out whoever came alone by asking all of the guests for their invitation numbers.
 Input
