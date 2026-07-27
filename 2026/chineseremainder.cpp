@@ -50,3 +50,7 @@ int main() {
         }
     }
 }
+
+//  a - b = tm - sn
+
+// I suck at math and dunno how to do it with the Linear Diophantine Equations and extended Euclidian theorm
